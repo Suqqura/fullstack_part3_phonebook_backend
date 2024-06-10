@@ -1,9 +1,19 @@
-// puhelinluettelon backend 3.1 - 3.5 done
+// puhelinluettelon backend 3.1 - 3.8* done
 
 const express = require('express')
+const morgan = require('morgan')
 const app = express()
 
 app.use(express.json())
+
+// middleware morgan 'tiny' + body(POST data), 3.7 & 3.8
+morgan.token('body', (request) => {
+  return JSON.stringify(request.body)
+})
+
+morgan.format('tiny',':method :url :status :res[content-length] - :response-time ms :body')
+app.use(morgan('tiny'))
+
 
 // data 3.1
 let persons = [
@@ -29,7 +39,7 @@ let persons = [
   },
 ]
 
-// homepage
+// homepage just because why not
 app.get('/', (request, response) => {
   response.send('<h1>Hello World! persons?</h1>')
 })
@@ -43,8 +53,9 @@ app.get('/api/persons', (request, response) => {
 app.get('/info', (request, response) => {
   const now = new Date()
   const formattedNow = now.toString()
+  const personsAmount = persons.length
   response.send(`
-    <p>Phonebook has info for ${persons.length} people </p>
+    <p>Phonebook has info for ${personsAmount} people </p>
     <p>${formattedNow}</p>
     `)
   console.log('Today is: ', formattedNow)
