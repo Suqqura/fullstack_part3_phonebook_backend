@@ -2,9 +2,11 @@
 
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 // middleware morgan 'tiny' + body(POST data), 3.7 & 3.8
 morgan.token('body', (request) => {
@@ -119,7 +121,7 @@ app.post('/api/persons', (request, response) => {
 
 
 // port
-const PORT = 3002
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
