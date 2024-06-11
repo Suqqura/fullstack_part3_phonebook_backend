@@ -6,6 +6,7 @@ const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(express.static('dist'))
 app.use(cors())
 
 // middleware morgan 'tiny' + body(POST data), 3.7 & 3.8
