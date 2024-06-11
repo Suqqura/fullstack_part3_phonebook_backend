@@ -1,1 +1,103 @@
-@import"https://fonts.googleapis.com/css2?family=Audiowide&family=Sofia&family=Trirong&display=swap";h2{color:#fff;margin-bottom:20px;font-size:30px;border-radius:4px;background-color:#5f9ea0;padding:20px;font-family:Trirong,sans-serif;text-align:left}h3{margin-top:30px;color:#2f4f4f;text-align:left;border-top:5px solid cadetblue;border-radius:4px;padding:10px}.notification{color:green;background:#d3d3d3;font-size:20px;border-style:solid;border-radius:5px;padding:10px;margin-bottom:10px}.error{color:red;background:#d3d3d3;font-size:20px;border-style:solid;border-radius:5px;padding:10px;margin-bottom:10px}body{display:flex;justify-content:center;align-items:center;margin:20px;font-family:Arial,sans-serif;background-color:#f0f0f0}.container{background-color:#fff;padding:30px;border-radius:10px;box-shadow:0 0 10px #00000080;width:100%;max-width:600px;min-width:300px;text-align:center}form{display:inline-flex;flex-direction:column;text-align:end;margin-bottom:20px;border-style:ridge;border-color:#ccc;border-radius:5px;border-width:5px;padding:20px 50px 20px 20px}input{flex:1;padding:10px;margin:5px;border:.5px solid;border-color:#bebebe;border-radius:4px}button{padding:10px;margin-top:5px;margin-left:20px;margin-right:5px;border:none;border-radius:4px;background-color:#20b2aa;color:#fff;cursor:pointer}button:hover{background-color:#26d4cc}ul{margin:10px;text-align:start}@media (max-width: 600px){.container{padding:20px;box-shadow:none}h2{font-size:24px;padding:15px}h3{margin-top:20px;padding:8px}form{padding:15px 20px 15px 15px;border-width:3px}input{padding:8px}button{padding:8px;margin-top:10px;margin-left:10px}ul{margin:5px}}
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Sofia&family=Trirong&display=swap');
+
+h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-radius: 4px;
+  background-color: cadetblue;
+  padding: 20px;
+  font-family: 'Trirong', sans-serif;
+  text-align: left;
+}
+
+h3 {
+  margin-top: 30px;
+  color: darkslategray;
+  text-align: left;
+  border-top: 5px solid cadetblue;
+  border-radius: 4px;
+  padding: 10px;
+  /*text-decoration: overline cadetblue 5px; */
+}
+
+.notification {
+  color: green;
+  background: lightgray;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  min-width: 400px;
+  text-align: center;
+}
+
+form {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: end;
+  margin-bottom: 20px;
+  border-style:ridge;
+  border-color: #ccc;
+  border-radius: 5px;
+  border-width: 5px;
+  padding: 20px;
+  padding-right: 50px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  border: 0.5px solid;
+  border-color: #bebebe;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: lightseagreen;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(38, 212, 204);
+}
+
+ul {
+  margin: 10px;
+  text-align: start;
+}
