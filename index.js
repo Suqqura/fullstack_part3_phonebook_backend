@@ -119,10 +119,13 @@ app.put('/api/persons/:id', (request, response, next) => {
 
 // info, 3.2
 app.get('/info', (request, response) => {
+  const now = new Date()
+  const formattedNow = now.toString()
+
   Person.find({}).then(persons => {
     response.send(`
       <p>Phonebook has info for ${persons.length} people</p>
-      <p>${new Date()}</p>
+      <p>${formattedNow}</p>
     `)
   })
   .catch(error => next(error))
