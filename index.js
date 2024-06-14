@@ -7,7 +7,7 @@ const morgan = require('morgan')
 
 const Person = require('./models/person')
 
-app.use(express.static('build'))
+app.use(express.static('dist'))
 
 
 // middleware morgan 'tiny' + body(POST data), 3.7 & 3.8
