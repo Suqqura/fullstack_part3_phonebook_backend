@@ -33,16 +33,16 @@ if (process.argv.length === 5) {
   person
     .save()
     .then(persons => {
-    console.log('person saved!')
-    mongoose.connection.close()
-  })
+      console.log('person saved!')
+      mongoose.connection.close()
+    })
 } else {
   Person
     .find({})
     .then(persons => {
-    persons.forEach(person => {
-      console.log(person)
-  })
-  mongoose.connection.close()
-})
+      persons.forEach(person => {
+        console.log(person)
+      })
+      mongoose.connection.close()
+    })
 }

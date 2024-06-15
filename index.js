@@ -54,7 +54,7 @@ app.get('/api/persons', (request, response, next) => {
   Person.find({}).then(persons => {
     response.json(persons)
   })
-  .catch(error => next(error))
+    .catch(error => next(error))
 })
 
 
@@ -76,7 +76,7 @@ app.get('/api/persons/:id', (request, response, next) => {
 app.delete('/api/persons/:id', (request, response, next) => {
   Person.findByIdAndDelete(request.params.id)
     .then(result => {
-        response.status(204).end()
+      response.status(204).end()
     })
     .catch(error => next(error))
 })
@@ -84,23 +84,23 @@ app.delete('/api/persons/:id', (request, response, next) => {
 
 // new person, 3.5
 app.post('/api/persons', (request, response, next) => {
-  const body = request.body;
+  const body = request.body
 
   const person = new Person({
     name: body.name,
     number: body.number,
-  });
+  })
 
   person.save().then(savedPerson => {
     response.json(savedPerson)
   })
-  .catch(error => next(error))
+    .catch(error => next(error))
 })
 
 
 // update person
 app.put('/api/persons/:id', (request, response, next) => {
-  const { name, number} = request.body
+  const { name, number } = request.body
 
   const person = {
     name: name,
@@ -109,7 +109,7 @@ app.put('/api/persons/:id', (request, response, next) => {
 
   Person.findByIdAndUpdate(
     request.params.id,
-    { name, number},
+    { name, number },
     { new: true, runValidators: true, context: 'query' }
   )
     .then(updatedPerson => {
@@ -130,7 +130,7 @@ app.get('/info', (request, response, next) => {
       <p>${formattedNow}</p>
     `)
   })
-  .catch(error => next(error))
+    .catch(error => next(error))
 })
 
 
